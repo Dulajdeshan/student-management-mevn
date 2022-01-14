@@ -15,17 +15,17 @@ lerna run build
 
 #### UI
 ```
-lerna run --stream --scope rampup-ui
+lerna run --stream --scope rampup-ui start
 ```
 
 #### Crud Service
 ```
-lerna run --stream --scope crud-service
+lerna run --stream --scope crud-service start:dev
 ```
 
 #### File Upload Service
 ```
-lerna run --stream --scope file-upload-service
+lerna run --stream --scope file-upload-service start:dev
 ```
 
 ### Compiles and minifies for production
