@@ -19,16 +19,31 @@ scalar DateTime
 
 type Query {
   getAllStudents: [Student!]!
+  getStudent(student: StudentFindInput!): Student!
+}
+
+input StudentFindInput {
+  id: Int!
 }
 
 type Mutation {
-  createStudent(student: StudentCreateDTO!): Student!
+  createStudent(student: StudentCreateInput!): Student!
+  updateStudent(student: StudentUpdateInput!): Student!
 }
 
-input StudentCreateDTO {
+input StudentCreateInput {
   name: String!
   gender: String!
   address: String!
   mobile: String!
   dob: DateTime!
+}
+
+input StudentUpdateInput {
+  name: String
+  gender: String
+  address: String
+  mobile: String
+  dob: DateTime
+  id: Int!
 }
