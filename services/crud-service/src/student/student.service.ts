@@ -13,7 +13,11 @@ export class StudentService {
   ) {}
 
   async findAll(): Promise<Student[]> {
-    return this.studentRepository.find();
+    return this.studentRepository.find({
+      order: {
+        createdAt: 'ASC',
+      },
+    });
   }
 
   async findOne(student: StudentFindDTO): Promise<Student> {
